@@ -59,8 +59,8 @@ impl HostWorldWriter {
             );
 
             // finish updates
-            false.ser(writer);
             writer.release_bits(1);
+            false.ser(writer);
         }
 
         // write entity actions
@@ -79,8 +79,8 @@ impl HostWorldWriter {
             );
 
             // finish actions
-            false.ser(writer);
             writer.release_bits(1);
+            false.ser(writer);
         }
     }
 
@@ -449,8 +449,8 @@ impl HostWorldWriter {
             );
 
             // write ComponentContinue finish bit, release
-            false.ser(writer);
             writer.release_bits(1);
+            false.ser(writer);
         }
     }
 
