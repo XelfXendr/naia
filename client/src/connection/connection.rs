@@ -242,8 +242,8 @@ impl<E: Copy + Eq + Hash + Send + Sync> Connection<E> {
                 );
 
                 // finish tick buffered messages
-                false.ser(&mut writer);
                 writer.release_bits(1);
+                false.ser(&mut writer);
             }
 
             self.base.write_outgoing_packet(

@@ -166,8 +166,8 @@ impl<E: Copy + Eq + Hash + Send + Sync> BaseConnection<E> {
             );
 
             // finish messages
-            false.ser(writer);
             writer.release_bits(1);
+            false.ser(writer);
         }
 
         if write_world_events {
